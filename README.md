@@ -44,7 +44,7 @@ The following parts introduce different modes of deploying Agent OS. **Currently
 ### Mode 1 (Local Kernel Mode)
 
 <p align="center">
-<img src="docs/assets/Agent OS-figs/stage1.png" width=300>
+<img src="docs/assets/aios-figs/stage1.png" width=300>
 </p>
 
 - Features:
@@ -54,7 +54,7 @@ The following parts introduce different modes of deploying Agent OS. **Currently
 ### Mode 2 (Remote Kernel Mode)
 
 <p align="center">
-<img src="docs/assets/Agent OS-figs/stage2.png" width=300>
+<img src="docs/assets/aios-figs/stage2.png" width=300>
 </p>
 
 - Features: 
@@ -64,7 +64,7 @@ The following parts introduce different modes of deploying Agent OS. **Currently
 ### Mode 2.5 (Remote Kernel Dev Mode)
 
 <p align="center">
-<img src="docs/assets/Agent OS-figs/stage2.5.png" width=300>
+<img src="docs/assets/aios-figs/stage2.5.png" width=300>
 </p>
 
 - Features:
