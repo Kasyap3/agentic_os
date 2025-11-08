@@ -1,14 +1,5 @@
 # Agent OS: AI Agent Operating System
 
-<a href='https://arxiv.org/abs/2403.16971'><img src='https://img.shields.io/badge/Paper-PDF-red'></a>
-<a href='https://arxiv.org/abs/2312.03815'><img src='https://img.shields.io/badge/Paper-PDF-blue'></a>
-<a href='https://docs.Agent OS.foundation/'><img src='https://img.shields.io/badge/Documentation-Agent OS-green'></a>
-<a href='https://discord.gg/B2HFxEgTJX'><img src='https://img.shields.io/badge/Community-Discord-8A2BE2'></a>
-[![Gurubase](https://img.shields.io/badge/Gurubase-Ask%20Agent OS%20Guru-006BFF)](https://gurubase.io/g/Agent OS)
-
-<a href="https://trendshift.io/repositories/8908" target="_blank"><img src="https://trendshift.io/api/badge/repositories/8908" alt="agiresearch%2FAgent OS | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-<a href="https://give.rutgersfoundation.org/Agent OS-project/23717.html" target="_blank"><img src="docs/assets/sponsor.png" alt="Sponsor" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-
 Agent OS is the AI Agent Operating System, which embeds large language model (LLM) into the operating system and facilitates the development and deployment of LLM-based AI Agents. Agent OS is designed to address problems (e.g., scheduling, context switch, memory management, storage management, tool management, Agent SDK management, etc.) during the development and deployment of LLM-based agents, towards a better Agent OS-Agent ecosystem for agent developers and agent users. Agent OS includes the Agent OS Kernel (this [Agent OS](https://github.com/Kasyap3/agentic_os OS) repository) and the Agent OS SDK (the [Cerebrum](https://github.com/agiresearch/Cerebrum) repository). Agent OS supports both Web UI and Terminal UI.
 
 ## Authors
@@ -84,7 +75,7 @@ The following parts introduce different modes of deploying Agent OS. **Currently
 ### Mode 3 (Personal Remote Kernel Mode)
 
 <p align="center">
-<img src="docs/assets/Agent OS-figs/stage3.png" width=800>
+<img src="docs/assets/aios-figs/stage3.png" width=800>
 </p>
 
 - Ongoing Features:
@@ -100,7 +91,7 @@ The following parts introduce different modes of deploying Agent OS. **Currently
 ### Mode 4 (Personal Remote Virtual Kernel Mode)
 
 <p align="center">
-<img src="docs/assets/Agent OS-figs/stage4.png" width=800>
+<img src="docs/assets/aios-figs/stage4.png" width=800>
 </p>
 
 - Ongoing Features:
