@@ -1,5 +1,5 @@
-# How to contribute to AIOS
-Thank you for your interest in AIOS!
+# How to contribute to oneOS
+Thank you for your interest in oneOS!
 Here's a guide to help you contribute to this project.
 
 ## 1. Get Started
@@ -80,7 +80,7 @@ git commit -m <type>: <subject>
 
 ### Create a Pull Request
 
-1. Visit your forked AIOS repository on GitHub and click the "Compare & pull request" button to initiate the process of submitting your changes to the original repository for review and potential merging.
+1. Visit your forked oneOS repository on GitHub and click the "Compare & pull request" button to initiate the process of submitting your changes to the original repository for review and potential merging.
 2. Choose the base branch and the compare branch (your feature branch).💡 Note that when you add new features, it is recommended to choose the (`dev`) branch and if your change does not affect original functions, you may consider choosing the (`main`) branch.
 3. Write a title and describe your changes in the description. And it is recommended to select the label of the change to make it more clear.
 
@@ -108,7 +108,7 @@ Each directory is required to describe the purpose of the directory and each fil
 
 ```py
 # This file has helpful math functions that we will use in the foo module in
-# AIOS
+# oneOS
 
 def add(a, b):
     return a + b
@@ -160,6 +160,6 @@ c = a + b # This adds a and b and stores the result in c
 A comment describing multiple lines in a particular function can be represented by `#` as well.
 
 ## 5. Review and Approval
-Our maintainers will have a review of that and might give some suggestions or ask for more details. After they approve, your commitment can be incorporated into AIOS!
+Our maintainers will have a review of that and might give some suggestions or ask for more details. After they approve, your commitment can be incorporated into oneOS!
 
-If you need some ideas on what to get started with, take a look at our goals for the rest of this year in [issues](https://github.com/agiresearch/AIOS/issues).
+If you need some ideas on what to get started with, take a look at our goals for the rest of this year in [issues](https://github.com/Kasyap3/agentic_os).

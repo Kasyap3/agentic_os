@@ -9,8 +9,8 @@ os.environ["QDRANT_HOST"] = "localhost"
 os.environ["QDRANT_PORT"] = "6333"
 os.environ["QDRANT_EMBEDDING_MODEL"] = "sentence-transformers/all-MiniLM-L6-v2"
 
-from aios.memory.retrievers import QdrantRetriever
-from aios.storage.filesystem.vector_db import QdrantDB
+from oneos.memory.retrievers import QdrantRetriever
+from oneos.storage.filesystem.vector_db import QdrantDB
 
 
 class TestQdrantIntegration(unittest.TestCase):
@@ -125,10 +125,10 @@ class TestQdrantIntegration(unittest.TestCase):
 
         import sys
 
-        if "aios.storage.filesystem.vector_db" in sys.modules:
-            del sys.modules["aios.storage.filesystem.vector_db"]
+        if "oneos.storage.filesystem.vector_db" in sys.modules:
+            del sys.modules["oneos.storage.filesystem.vector_db"]
 
-        from aios.storage.filesystem.vector_db import get_vector_db
+        from oneos.storage.filesystem.vector_db import get_vector_db
 
         vector_db = get_vector_db(self.temp_dir)
 

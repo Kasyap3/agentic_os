@@ -11,16 +11,16 @@ import os
 from datetime import datetime
 from pathlib import Path
 
-from aios.hooks.modules.llm import useCore
-from aios.hooks.modules.memory import useMemoryManager
-from aios.hooks.modules.storage import useStorageManager
-from aios.hooks.modules.tool import useToolManager
-from aios.hooks.modules.agent import useFactory
-from aios.hooks.modules.scheduler import fifo_scheduler_nonblock as fifo_scheduler
-from aios.hooks.modules.scheduler import rr_scheduler_nonblock as rr_scheduler
+from oneos.hooks.modules.llm import useCore
+from oneos.hooks.modules.memory import useMemoryManager
+from oneos.hooks.modules.storage import useStorageManager
+from oneos.hooks.modules.tool import useToolManager
+from oneos.hooks.modules.agent import useFactory
+from oneos.hooks.modules.scheduler import fifo_scheduler_nonblock as fifo_scheduler
+from oneos.hooks.modules.scheduler import rr_scheduler_nonblock as rr_scheduler
 
-from aios.syscall.syscall import useSysCall
-from aios.config.config_manager import config
+from oneos.syscall.syscall import useSysCall
+from oneos.config.config_manager import config
 
 from cerebrum.llm.apis import LLMQuery, LLMResponse
 
@@ -763,5 +763,5 @@ if __name__ == "__main__":
     host = server_config.get("host", "0.0.0.0")
     port = server_config.get("port", 8000)
     
-    # print(f"Starting AIOS server on {host}:{port}")
+    # print(f"Starting oneOS server on {host}:{port}")
     uvicorn.run("runtime.launch:app", host=host, port=port, reload=False)

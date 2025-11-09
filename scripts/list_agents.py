@@ -1,6 +1,6 @@
-# This file provides functionality to list both offline and online AIOS agents.
+# This file provides functionality to list both offline and online oneOS agents.
 # It can display locally installed agents as well as agents available for installation
-# from the AIOS foundation.
+# from the oneOS foundation.
 
 import os
 import importlib
@@ -72,9 +72,9 @@ def get_offline_agents() -> Dict[str, List[str]]:
     return offline_agents
 
 def get_online_agents() -> Dict[str, List[str]]:
-    """Get all available online agents from AIOS foundation with their versions
+    """Get all available online agents from oneOS foundation with their versions
 
-    This function connects to the AIOS foundation server to retrieve a list of
+    This function connects to the oneOS foundation server to retrieve a list of
     all available agents and their versions.
 
     Returns:
@@ -82,7 +82,7 @@ def get_online_agents() -> Dict[str, List[str]]:
     """
     online_agents = {}
     try:
-        manager = AgentManager("https://app.aios.foundation/")
+        manager = AgentManager("https://app.oneos.foundation/")
         agent_list = manager.list_available_agents()
         for agent_info in agent_list:
             # Parse the full agent path which includes version
@@ -103,7 +103,7 @@ def get_online_agents() -> Dict[str, List[str]]:
     return online_agents
 
 def main():
-    """Main function to list all offline and online AIOS agents
+    """Main function to list all offline and online oneOS agents
 
     This function retrieves and displays:
     - Offline agents that are ready to use (locally installed)

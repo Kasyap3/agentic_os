@@ -1,29 +1,29 @@
-# Agent OS: AI Agent Operating System
+# oneOS: AI Agent Operating System
 
-Agent OS is the AI Agent Operating System, which embeds large language model (LLM) into the operating system and facilitates the development and deployment of LLM-based AI Agents. Agent OS is designed to address problems (e.g., scheduling, context switch, memory management, storage management, tool management, Agent SDK management, etc.) during the development and deployment of LLM-based agents, towards a better Agent OS-Agent ecosystem for agent developers and agent users. Agent OS includes the Agent OS Kernel (this [Agent OS](https://github.com/Kasyap3/agentic_os OS) repository) and the Agent OS SDK (the [Cerebrum](https://github.com/agiresearch/Cerebrum) repository). Agent OS supports both Web UI and Terminal UI.
+oneOS is the AI Agent Operating System, which embeds large language model (LLM) into the operating system and facilitates the development and deployment of LLM-based AI Agents. oneOS is designed to address problems (e.g., scheduling, context switch, memory management, storage management, tool management, Agent SDK management, etc.) during the development and deployment of LLM-based agents, towards a better oneOS-Agent ecosystem for agent developers and agent users. oneOS includes the oneOS Kernel (this [oneOS](https://github.com/Kasyap3/agentic_os OS) repository) and the oneOS SDK (the [Cerebrum](https://github.com/agiresearch/Cerebrum) repository). oneOS supports both Web UI and Terminal UI.
 
 ## Authors
 Kasyap Varanasi, Suketh Ankeshwar, Sidharth Bhangale, Nikhil Potluri
 
-## 🏠 Architecture of Agent OS
+## 🏠 Architecture of oneOS
 ### Overview
 <p align="center">
-<img src="docs/assets/Agent OS-figs/architecture.jpg">
+<img src="docs/assets/oneos-figs/architecture.jpg">
 </p>
 
-The Agent OS system is comprised of two key components: the Agent OS kernel and the Agent OS SDK.
-The Agent OS kernel acts as an abstraction layer over the operating system kernel, managing various resources that agents require, such as LLM, memory, storage and tool. 
-The Agent OS SDK is designed for agent users and developers, enabling them to build and run agent applications by interacting with the Agent OS kernel.
-Agent OS kernel is the current repository and Agent OS SDK can be found at [here](https://github.com/agiresearch/Cerebrum)
+The oneOS system is comprised of two key components: the oneOS kernel and the oneOS SDK.
+The oneOS kernel acts as an abstraction layer over the operating system kernel, managing various resources that agents require, such as LLM, memory, storage and tool. 
+The oneOS SDK is designed for agent users and developers, enabling them to build and run agent applications by interacting with the oneOS kernel.
+oneOS kernel is the current repository and oneOS SDK can be found at [here](https://github.com/agiresearch/Cerebrum)
 
 ### Modules and Connections
-Below shows how agents utilize Agent OS SDK to interact with Agent OS kernel and how Agent OS kernel receives agent queries and leverage the chain of syscalls that are scheduled and dispatched to run in different modules. 
+Below shows how agents utilize oneOS SDK to interact with oneOS kernel and how oneOS kernel receives agent queries and leverage the chain of syscalls that are scheduled and dispatched to run in different modules. 
 <p align="center">
-<img src="docs/assets/Agent OS-figs/details.png">
+<img src="docs/assets/oneos-figs/details.png">
 </p>
 
 ### Computer-use Specialized Architecture
-For computer-use agent, the architecture extends the Agent OS Kernel with significant enhancements focused on computer contextualization. While preserving essential components like LLM Core(s), Context Manager, and Memory Manager, the Tool Manager module has been fundamentally redesigned to incorporate a VM (Virtual Machine) Controller and MCP Server.
+For computer-use agent, the architecture extends the oneOS Kernel with significant enhancements focused on computer contextualization. While preserving essential components like LLM Core(s), Context Manager, and Memory Manager, the Tool Manager module has been fundamentally redesigned to incorporate a VM (Virtual Machine) Controller and MCP Server.
 This redesign creates a sandboxed environment that allows agents to safely interact with computer systems while
 maintaining a consistent semantic mapping between agent intentions and computer operations. 
 
@@ -32,19 +32,19 @@ maintaining a consistent semantic mapping between agent intentions and computer 
 </p>
 
 
-## Different deployment modes of Agent OS
-Here are some key notations that are required to know before introducing the different modes of Agent OS. 
+## Different deployment modes of oneOS
+Here are some key notations that are required to know before introducing the different modes of oneOS. 
 - **AHM (Agent Hub Machine)**: Central server that hosts the agent marketplace/repository where users can publish, download, and share agents. Acts as the distribution center for all agent-related resources.
 - **AUM (Agent UI Machine)**: Client machine that provides user interface for interacting with agents. Can be any device from mobile phones to desktops that supports agent visualization and control.
 - **ADM (Agent Development Machine)**: Development environment where agent developers write, debug and test their agents. Requires proper development tools and libraries.
 - **ARM (Agent Running Machine)**: Execution environment where agents actually run and perform tasks. Needs adequate computational resources for agent operations.
 
-The following parts introduce different modes of deploying Agent OS. **Currently, Agent OS already supports Mode 1 and Mode 2, other modes with new features are still ongoing.**
+The following parts introduce different modes of deploying oneOS. **Currently, oneOS already supports Mode 1 and Mode 2, other modes with new features are still ongoing.**
 
 ### Mode 1 (Local Kernel Mode)
 
 <p align="center">
-<img src="docs/assets/aios-figs/stage1.png" width=300>
+<img src="docs/assets/oneos-figs/stage1.png" width=300>
 </p>
 
 - Features:
@@ -54,7 +54,7 @@ The following parts introduce different modes of deploying Agent OS. **Currently
 ### Mode 2 (Remote Kernel Mode)
 
 <p align="center">
-<img src="docs/assets/aios-figs/stage2.png" width=300>
+<img src="docs/assets/oneos-figs/stage2.png" width=300>
 </p>
 
 - Features: 
@@ -64,7 +64,7 @@ The following parts introduce different modes of deploying Agent OS. **Currently
 ### Mode 2.5 (Remote Kernel Dev Mode)
 
 <p align="center">
-<img src="docs/assets/aios-figs/stage2.5.png" width=300>
+<img src="docs/assets/oneos-figs/stage2.5.png" width=300>
 </p>
 
 - Features:
@@ -75,37 +75,37 @@ The following parts introduce different modes of deploying Agent OS. **Currently
 ### Mode 3 (Personal Remote Kernel Mode)
 
 <p align="center">
-<img src="docs/assets/aios-figs/stage3.png" width=800>
+<img src="docs/assets/oneos-figs/stage3.png" width=800>
 </p>
 
 - Ongoing Features:
-  - Each user/developer can have their personal Agent OS with long-term persistent data as long as they have registered account in the Agent OS ecosystem
+  - Each user/developer can have their personal oneOS with long-term persistent data as long as they have registered account in the oneOS ecosystem
   - Their personal data can be synced to different machines with the same account
 
 - Critical techniques:
   - User account registration and verification mechanism
-  - Persistent personal data storage for each user's Agent OS
-  - Synchronization for different Agent OS instances on different devices within the same account
+  - Persistent personal data storage for each user's oneOS
+  - Synchronization for different oneOS instances on different devices within the same account
   - Data privacy mechanism
 
 ### Mode 4 (Personal Remote Virtual Kernel Mode)
 
 <p align="center">
-<img src="docs/assets/aios-figs/stage4.png" width=800>
+<img src="docs/assets/oneos-figs/stage4.png" width=800>
 </p>
 
 - Ongoing Features:
-  - Different user/developer's personal Agent OS kernels can co-exist in the same physical machine through virtualization
+  - Different user/developer's personal oneOS kernels can co-exist in the same physical machine through virtualization
 - Critical techniques:
-  - Virtualization of different Agent OS kernel instances in the same machine
+  - Virtualization of different oneOS kernel instances in the same machine
   - Scheduling and resource allocation mechanism for different virtual machines located in the same machine
 
 
 ## ✈️ Getting Started
-Please see our ongoing [documentation](https://docs.Agent OS.foundation/) for more information.
-- [Installation](https://docs.Agent OS.foundation/Agent OS-docs/getting-started/installation)
-- [Quickstart](https://docs.Agent OS.foundation/Agent OS-docs/getting-started/quickstart)
-- [WebUI Quickstart](https://docs.Agent OS.foundation/Agent OS-docs/getting-started/webui-quickstart)
+Please see our ongoing [documentation](https://docs.oneos.foundation/) for more information.
+- [Installation](https://docs.oneos.foundation/oneos-docs/getting-started/installation)
+- [Quickstart](https://docs.oneos.foundation/oneos-docs/getting-started/quickstart)
+- [WebUI Quickstart](https://docs.oneos.foundation/oneos-docs/getting-started/webui-quickstart)
 
 ### Installation
 #### Requirements
@@ -114,8 +114,8 @@ Please see our ongoing [documentation](https://docs.Agent OS.foundation/) for mo
 
 #### Installation from source
 
-##### Step 1: Install Agent OS Kernel
-Git clone Agent OS kernel
+##### Step 1: Install oneOS Kernel
+Git clone oneOS kernel
 ```bash
 git clone https://github.com/Kasyap3/agentic_os OS.git
 ```
@@ -157,7 +157,7 @@ pip install -r requirements-cuda.txt
 pip install -r requirements.txt
 ```
 
-##### Step 2: Install Agent OS SDK (Cerebrum)
+##### Step 2: Install oneOS SDK (Cerebrum)
 1. Clone the Cerebrum repository:
    ```bash
    git clone https://github.com/agiresearch/Cerebrum.git
@@ -176,18 +176,18 @@ pip install -r requirements.txt
 ##### Step 3: Install Virtualized Environment (Optional)
 To use the mcp for computer-use agent, we strongly recommend you install a virtualized environment equipped with GUI. Instructions can be found in [here](https://github.com/xlang-ai/OSWorld). 
 
-**Note**: The machine where the Agent OS kernel (Agent OS) is installed must also have the Agent OS SDK (Cerebrum) installed. Installing Agent OS kernel will install the Agent OS SDK automatically by default. If you are using the Local Kernel mode, i.e., you are running Agent OS and agents on the same machine, then simply install both Agent OS and Cerebrum on that machine. If you are using Remote Kernel mode, i.e., running Agent OS on Machine 1 and running agents on Machine 2 and the agents remotely interact with the kernel, then you need to install both Agent OS kernel and Agent OS SDK on Machine 1, and install the Agent OS SDK alone on Machine 2. Please follow the guidelines at [Cerebrum](https://github.com/agiresearch/Cerebrum) regarding how to install the SDK.
+**Note**: The machine where the oneOS kernel (oneOS) is installed must also have the oneOS SDK (Cerebrum) installed. Installing oneOS kernel will install the oneOS SDK automatically by default. If you are using the Local Kernel mode, i.e., you are running oneOS and agents on the same machine, then simply install both oneOS and Cerebrum on that machine. If you are using Remote Kernel mode, i.e., running oneOS on Machine 1 and running agents on Machine 2 and the agents remotely interact with the kernel, then you need to install both oneOS kernel and oneOS SDK on Machine 1, and install the oneOS SDK alone on Machine 2. Please follow the guidelines at [Cerebrum](https://github.com/agiresearch/Cerebrum) regarding how to install the SDK.
 
 ### Quickstart
-Before launching Agent OS, it is required to set up configurations. Agent OS provides two ways of setting up configurations, one is to set up by directly modifying the configuration file, another is to set up interactively. 
+Before launching oneOS, it is required to set up configurations. oneOS provides two ways of setting up configurations, one is to set up by directly modifying the configuration file, another is to set up interactively. 
 
 #### Set up configuration file directly (Recommended)
-You need API keys for services like OpenAI, Anthropic, Groq and HuggingFace. The simplest way to configure them is to edit the `Agent OS/config/config.yaml`.
+You need API keys for services like OpenAI, Anthropic, Groq and HuggingFace. The simplest way to configure them is to edit the `oneos/config/config.yaml`.
 
 > [!TIP]
-> It is important to mention that, we strongly recommend using the `Agent OS/config/config.yaml` file to set up your API keys. This method is straightforward and helps avoid potential sychronization issues with environment variables. 
+> It is important to mention that, we strongly recommend using the `oneos/config/config.yaml` file to set up your API keys. This method is straightforward and helps avoid potential sychronization issues with environment variables. 
 
-A simple example to set up your API keys in `Agent OS/config/config.yaml` is shown below:
+A simple example to set up your API keys in `oneos/config/config.yaml` is shown below:
 ```yaml
 api_keys:
   openai: "your-openai-key"    
@@ -210,7 +210,7 @@ To obtain these API keys:
 7. Novita AI API: Visit https://novita.ai/api-keys
 
 #### Configure LLM Models
-You can configure which LLM models to use in the same `Agent OS/config/config.yaml` file. Here's an example configuration:
+You can configure which LLM models to use in the same `oneos/config/config.yaml` file. Here's an example configuration:
 
 ```yaml
 llms:
@@ -262,12 +262,12 @@ You can configure HuggingFace models with specific GPU memory allocation:
 
 #### Set up interactively
 
-Alternatively, you can set up Agent OS configurations interactively by using the following command. 
+Alternatively, you can set up oneOS configurations interactively by using the following command. 
 
-- `Agent OS env list`: Show current environment variables, or show available API keys if no variables are set
-- `Agent OS env set`: Show current environment variables, or show available API keys if no variables are set
-- `Agent OS refresh`: Refresh Agent OS configuration.
-  Reloads the configuration from Agent OS/config/config.yaml.
+- `oneos env list`: Show current environment variables, or show available API keys if no variables are set
+- `oneos env set`: Show current environment variables, or show available API keys if no variables are set
+- `oneos refresh`: Refresh oneOS configuration.
+  Reloads the configuration from oneos/config/config.yaml.
   Reinitializes all components without restarting the server.
   The server must be running.
 
@@ -280,7 +280,7 @@ When no environment variables are set, the following API keys will be shown:
 - `HF_HOME`: Optional path to store HuggingFace models
 - `NOVITA_API_KEY`: Novita AI API key for accessing Novita AI services
 
-#### Launch Agent OS
+#### Launch oneOS
 After you setup your keys or environment parameters, then you can follow the instructions below to start.
 
 Run:
@@ -295,7 +295,7 @@ Or if you need to explicity set the Python version by running `python3.10`, `pyt
 python3.x -m uvicorn runtime.launch:app --host 0.0.0.0 --port 8000 # replace the port with your own port
 ```
 
-You also need to set up the host and port in the configuration of Cerebrum (Agent OS SDK) to make sure it is consistent with the configurations of Agent OS. 
+You also need to set up the host and port in the configuration of Cerebrum (oneOS SDK) to make sure it is consistent with the configurations of oneOS. 
 
 You can also force the kernel to run in the background with:
 ```
@@ -310,26 +310,26 @@ Command to launch the kernel in the background so it continues running even afte
 nohup python3 -m uvicorn runtime.launch:app --host 0.0.0.0 --port 8000 > uvicorn.log 2>&1 &
 ```
 
-#### Interact with Agent OS terminal
+#### Interact with oneOS terminal
 
-To interact with the Agent OS terminal (LLM-based semantic file system), you can run the following command to start the Agent OS terminal.
+To interact with the oneOS terminal (LLM-based semantic file system), you can run the following command to start the oneOS terminal.
 
 ```
 python scripts/run_terminal.py
 ```
 
-Then you can start interacting with the Agent OS terminal by typing natural language commands. 
+Then you can start interacting with the oneOS terminal by typing natural language commands. 
 
-If you successfully start the Agent OS terminal, it will be shown as below: 
+If you successfully start the oneOS terminal, it will be shown as below: 
 
 <p align="center">
 <img src="docs/assets/terminal-figs/example.png" width=800>
 </p>
 
-Detailed instructions of how to use the Agent OS terminal can be found at [here](https://github.com/agiresearch/Agent OS-LSFS)
+Detailed instructions of how to use the oneOS terminal can be found at [here](https://github.com/agiresearch/oneOS-LSFS)
 
 > [!WARNING]
-> The rollback feature of the Agent OS terminal requires the connection to the redis server. Make sure you have the redis server running if you would like to use the rollback feature.
+> The rollback feature of the oneOS terminal requires the connection to the redis server. Make sure you have the redis server running if you would like to use the rollback feature.
 
 #### Run computer-use Agent
 Make sure you have installed a virtualized environment with GUI, then you can refer to [Cerebrum](https://github.com/agiresearch/Cerebrum) for how to run the computer-use agent. 
@@ -353,24 +353,24 @@ Make sure you have installed a virtualized environment with GUI, then you can re
 | vLLM | [All Models](https://docs.vllm.ai/en/latest/) | ✅ | model-name | vllm | - |
 | Novita | [All Models](https://novita.ai/models/llm) | ✅ | model-name | novita | NOVITA_API_KEY |
 
-## 🔧 Experimental Rust Rewrite (Agent OS-rs)
-An early experimental Rust scaffold lives in `Agent OS-rs/` providing trait definitions and minimal placeholder implementations (context, memory, storage, tool, scheduler, llm). This is NOT feature-parity yet; it's a foundation for incremental porting and performance-focused components.
+## 🔧 Experimental Rust Rewrite (oneOS-rs)
+An early experimental Rust scaffold lives in `oneos-rs/` providing trait definitions and minimal placeholder implementations (context, memory, storage, tool, scheduler, llm). This is NOT feature-parity yet; it's a foundation for incremental porting and performance-focused components.
 
 ### Try It
 ```bash
-cd Agent OS-rs
+cd oneos-rs
 cargo build
 cargo test
 ```
 
 ### Example (Echo LLM + Noop Scheduler)
 ```rust
-use Agent OS_rs::prelude::*;
+use oneos_rs::prelude::*;
 
 fn main() -> anyhow::Result<()> {
   let llm = std::sync::Arc::new(EchoLLM);
   let memory = std::sync::Arc::new(std::sync::Mutex::new(InMemoryMemoryManager::new()));
-  let storage = std::sync::Arc::new(FsStorageManager::new("/tmp/Agent OS_store"));
+  let storage = std::sync::Arc::new(FsStorageManager::new("/tmp/oneos_store"));
   let tool = std::sync::Arc::new(NoopToolManager);
   let mut scheduler = NoopScheduler::new(llm, memory, storage, tool);
   scheduler.start()?;
@@ -388,5 +388,5 @@ fn main() -> anyhow::Result<()> {
 - [ ] Port FIFO / RR schedulers
 - [ ] Benchmarks & feature flags
 
-Contributions welcome via focused PRs extending this scaffold. See `Agent OS-rs/README.md` for details.
+Contributions welcome via focused PRs extending this scaffold. See `oneos-rs/README.md` for details.
 ```

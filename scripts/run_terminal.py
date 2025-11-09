@@ -16,7 +16,7 @@ from cerebrum.llm.apis import llm_chat, llm_operate_file
 
 from cerebrum.storage.apis import mount
 
-class AIOSTerminal:
+class oneOSTerminal:
     def __init__(self):
         self.console = Console()
         
@@ -86,13 +86,13 @@ class AIOSTerminal:
             self.console.print("Example: list agents --offline")
 
     def run(self):
-        welcome_msg = Text("Welcome to AIOS Terminal! Type 'help' for available commands.", style="bold cyan")
+        welcome_msg = Text("Welcome to oneOS Terminal! Type 'help' for available commands.", style="bold cyan")
         self.console.print(Panel(welcome_msg, border_style="green"))
         
         root_dir = self.current_dir + "/root"
         
         while True:
-            mount_choice = self.session.prompt(self.get_prompt(extra_str=f"Do you want to mount AIOS Semantic File System to a specific directory you want? By default, it will be mounted at {root_dir}. [y/n] "))
+            mount_choice = self.session.prompt(self.get_prompt(extra_str=f"Do you want to mount oneOS Semantic File System to a specific directory you want? By default, it will be mounted at {root_dir}. [y/n] "))
             if mount_choice == 'y':
                 root_dir = self.session.prompt(self.get_prompt(extra_str=f"Enter the absolute path of the directory to mount: "))
                 break
@@ -145,5 +145,5 @@ class AIOSTerminal:
                 self.console.print(f"[red]Error: {str(e)}[/red]")
 
 if __name__ == "__main__":
-    terminal = AIOSTerminal()
+    terminal = oneOSTerminal()
     terminal.run()

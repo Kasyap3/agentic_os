@@ -1,5 +1,5 @@
 name: Usage
-description: Raise an issue here if you don't know how to use aios.
+description: Raise an issue here if you don't know how to use oneos.
 title: "[Usage] "
 labels: ["usage"]
 
@@ -26,7 +26,7 @@ body:
   attributes:
     label: How would you like to use aios
     description: |
-      A detailed description of how you want to use aios.
+      A detailed description of how you want to use oneos.
     value: |
       I want to run aios with the llm endpoint: xxx for agent: xxx.
 - type: markdown

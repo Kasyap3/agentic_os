@@ -7,7 +7,7 @@ from typing import List, Dict, Any, Tuple
 
 from cerebrum.llm.apis import llm_chat
 
-from cerebrum.utils.communication import aios_kernel_url
+from cerebrum.utils.communication import oneos_kernel_url
 
 # --- Helper function to send a single request ---
 def send_request(payload: Dict[str, Any]) -> Tuple[Dict[str, Any] | None, float]:
@@ -42,7 +42,7 @@ class TestConcurrentOllamaQueries(unittest.TestCase):
             print(f"Thread {index}: Completed in {duration:.2f}s with response: {json.dumps(response_data)}")
 
         print(f"\n--- Running test: {self._testMethodName} ---")
-        print(f"Sending {len(payloads)} concurrent requests to {aios_kernel_url}...")
+        print(f"Sending {len(payloads)} concurrent requests to {oneos_kernel_url}...")
         for i, payload in enumerate(payloads):
             thread = threading.Thread(target=worker, args=(i, payload))
             threads.append(thread)

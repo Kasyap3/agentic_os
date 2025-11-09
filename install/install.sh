@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Installation directory
-INSTALL_DIR="$HOME/.aios-1"
+INSTALL_DIR="$HOME/.oneos-1"
 REPO_URL="https://github.com/Kasyap3/agentic_os"
 BIN_DIR="$HOME/.local/bin"  # User-level bin directory
 
-echo "Installing AIOS..."
+echo "Installing oneOS..."
 
 # Ensure bin directory exists
 mkdir -p "$BIN_DIR"
@@ -83,10 +83,10 @@ rm "$INSTALL_DIR/src/Dockerfile"
 touch "$INSTALL_DIR/.env"
 
 # Create executable script
-cat > "$BIN_DIR/aios" << 'EOF'
+cat > "$BIN_DIR/oneos" << 'EOF'
 #!/bin/bash
 
-INSTALL_DIR="$HOME/.aios-1"
+INSTALL_DIR="$HOME/.oneos-1"
 PID_FILE="$INSTALL_DIR/server.pid"
 ENV_FILE="$INSTALL_DIR/.env"
 
@@ -205,9 +205,9 @@ clean() {
     rm -rf "$INSTALL_DIR"
 
     # Remove the executable
-    rm -f "$HOME/.local/bin/aios"
+    rm -f "$HOME/.local/bin/oneos"
 
-    echo "AIOS installation cleaned up successfully"
+    echo "oneOS installation cleaned up successfully"
 }
 
 env_add() {
@@ -292,14 +292,14 @@ case "$1" in
         ;;
     "refresh")
         if [ -f "$PID_FILE" ]; then
-            echo "Refreshing AIOS configuration..."
+            echo "Refreshing oneOS configuration..."
             # Get server configuration from the configuration file
-            HOST=$(python -c "from aios.config.config_manager import config; print(config.config.get('server', {}).get('host', 'localhost'))")
-            PORT=$(python -c "from aios.config.config_manager import config; print(config.config.get('server', {}).get('port', 8000))")
+            HOST=$(python -c "from oneos.config.config_manager import config; print(config.config.get('server', {}).get('host', 'localhost'))")
+            PORT=$(python -c "from oneos.config.config_manager import config; print(config.config.get('server', {}).get('port', 8000))")
             curl -X POST "http://${HOST}:${PORT}/core/refresh"
         else
             echo "Server is not running. Please start the server first."
-            echo "Run: aios start"
+            echo "Run: oneos start"
         fi
         ;;
     "env")
@@ -317,12 +317,12 @@ case "$1" in
                 cat << 'HELP'
 Environment Variable Management
 
-Usage: aios env <subcommand>
+Usage: oneos env <subcommand>
 
 Subcommands:
   add     Add a new environment variable
           - Interactive prompt for name and value
-          - Values are stored securely in ~/.aios-1/.env
+          - Values are stored securely in ~/.oneos-1/.env
           - Names must be alphanumeric with underscores
           - Values are hidden during input
 
@@ -350,13 +350,13 @@ HELP
                 cat << 'HELP'
 Agent Management
 
-Usage: aios agents <subcommand>
+Usage: oneos agents <subcommand>
 
 Subcommands:
   list    List all available agents
           - Shows Cerebrum built-in agents
           - Shows cached agents from previous installations
-          - Shows available agents to install from AIOS foundation
+          - Shows available agents to install from oneOS foundation
           - Displays versions and sources for each agent
 
 Note: Requires active internet connection for online agent listing
@@ -369,29 +369,29 @@ HELP
         ;;
     *)
         cat << 'HELP'
-AIOS Command Line Interface
+oneOS Command Line Interface
 
-Usage: aios <command> [options]
+Usage: oneos <command> [options]
 
 Commands:
-  start         Start the AIOS server
+  start         Start the oneOS server
                 The server will run in the background and be available at http://localhost:8000
-                Logs will be written to ~/.aios-1/server.log
+                Logs will be written to ~/.oneos-1/server.log
 
-  stop          Stop the running AIOS server
+  stop          Stop the running oneOS server
                 This will gracefully shutdown any running server instance
 
-  restart       Restart the AIOS server
+  restart       Restart the oneOS server
                 Equivalent to running 'stop' followed by 'start'
 
-  update        Update AIOS to the latest version
+  update        Update oneOS to the latest version
                 - Stops the server if running
                 - Pulls latest changes from the repository
                 - Updates dependencies
                 - Restarts the server automatically
                 - Your environment variables and configurations are preserved
 
-  refresh       Refresh AIOS configuration
+  refresh       Refresh oneOS configuration
                 - Reloads configuration without restart
                 - Server must be running
 
@@ -402,35 +402,35 @@ Commands:
                   remove  - Remove a variable (interactive)
                 Environment changes require server restart to take effect
 
-  agents        Manage AIOS agents
+  agents        Manage oneOS agents
                 Subcommands:
                   list    - List all available agents
                           • Shows Cerebrum built-in agents
                           • Shows cached agents from previous installations
-                          • Shows available agents to install from AIOS foundation
+                          • Shows available agents to install from oneOS foundation
                           • Displays versions and sources for each agent
 
-  clean         Uninstall AIOS completely
+  clean         Uninstall oneOS completely
                 - Stops any running server
-                - Removes all AIOS files and configurations
+                - Removes all oneOS files and configurations
                 - Deletes the installation directory
-                - Removes the aios command
+                - Removes the oneos command
                 Warning: This action cannot be undone!
 
 Examples:
-  aios start             # Start the server
-  aios env add          # Add a new API key or configuration value
-  aios agents list      # View all available agents
-  aios update           # Update to the latest version
+  oneos start             # Start the server
+  oneos env add          # Add a new API key or configuration value
+  oneos agents list      # View all available agents
+  oneos update           # Update to the latest version
 
 Notes:
   - Server runs at http://localhost:8000 by default
-  - Log file location: ~/.aios-1/server.log
-  - Configuration directory: ~/.aios-1
-  - Environment file: ~/.aios-1/.env
+  - Log file location: ~/.oneos-1/server.log
+  - Configuration directory: ~/.oneos-1
+  - Environment file: ~/.oneos-1/.env
   - Requires Python 3.10 or 3.11
 
-For more information, visit: https://github.com/agiresearch/AIOS
+For more information, visit: https://github.com/agiresearch/oneOS
 HELP
         exit 1
         ;;
@@ -438,32 +438,32 @@ esac
 EOF
 
 # Make it executable
-chmod +x "$BIN_DIR/aios"
+chmod +x "$BIN_DIR/oneos"
 
 cat << 'COMPLETE'
-🎉 AIOS installed successfully!
+🎉 oneOS installed successfully!
 
-The 'aios' command is now available in your terminal.
-Installation directory: ~/.aios-1
+The 'oneos' command is now available in your terminal.
+Installation directory: ~/.oneos-1
 
 Quick Start:
 1. Add any required environment variables:
-   aios env add
+   oneos env add
 
 2. Start the server:
-   aios start
+   oneos start
 
 3. Check the server status:
    curl http://localhost:8000/core/status
 
 For a full list of commands and options:
-   aios --help
+   oneos --help
 
 Server logs will be available at:
-~/.aios-1/server.log
+~/.oneos-1/server.log
 
-Note: AIOS requires Python 3.10 or 3.11
+Note: oneOS requires Python 3.10 or 3.11
 
 For more information, visit:
-https://github.com/agiresearch/AIOS
+https://github.com/agiresearch/oneOS
 COMPLETE

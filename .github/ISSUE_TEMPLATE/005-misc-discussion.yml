@@ -6,9 +6,9 @@ labels: ["misc discussion"]
 body:
 - type: textarea
   attributes:
-    label: Anything you want to discuss about aios.
+    label: Anything you want to discuss about oneos.
     description: >
-      Anything you want to discuss about aios.
+      Anything you want to discuss about oneos.
   validations:
     required: true
 - type: markdown

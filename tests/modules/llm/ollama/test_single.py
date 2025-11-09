@@ -1,6 +1,6 @@
 import unittest
 from cerebrum.llm.apis import llm_chat, llm_chat_with_json_output
-from cerebrum.utils.communication import aios_kernel_url
+from cerebrum.utils.communication import oneos_kernel_url
 from cerebrum.utils.utils import _parse_json_output
 
 class TestAgent:
@@ -19,7 +19,7 @@ class TestAgent:
         tool_response = llm_chat(
             agent_name=self.agent_name,
             messages=self.messages,
-            base_url=aios_kernel_url,
+            base_url=oneos_kernel_url,
             llms=[{
                 "name": "qwen3:1.7b",
                 "backend": "ollama"
@@ -53,7 +53,7 @@ class TestAgent:
         tool_response = llm_chat_with_json_output(
             agent_name=self.agent_name,
             messages=self.messages,
-            base_url=aios_kernel_url,
+            base_url=oneos_kernel_url,
             llms=[{
                 "name": "qwen3:1.7b",
                 "backend": "ollama"

@@ -12,7 +12,7 @@ import redis
 redis.Redis = fakeredis.FakeRedis
 
 # Import StorageManager and StorageResponse
-from aios.storage.storage import StorageManager
+from oneos.storage.storage import StorageManager
 from cerebrum.storage.apis import StorageResponse
 
 # Dummy data structure to simulate AgentRequest
@@ -83,7 +83,7 @@ class TestStorageManager(unittest.TestCase):
         agent_create = DummyAgentRequest(agent_name="test_agent", query=query_create)
         self.storage_manager.address_request(agent_create)
         # Write content
-        content = "Hello, AIOS Storage Test!"
+        content = "Hello, oneOS Storage Test!"
         query_write = DummyQuery(
             operation_type="write",
             params={"file_name": file_name, "file_path": file_path, "content": content}
